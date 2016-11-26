@@ -1,0 +1,250 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm, bottom=2cm,left=3cm,right=3cm,marginparwidth=1.95cm]{geometry}
+\usepackage{xcolor}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{amssymb,amsmath}
+\usepackage{color}
+\usepackage{setspace}
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+
+\fancyhead[RO]{\large \textsl {\textbf{109}}}
+\fancyhead[LO]{\large \textsl {6.3 Operators: Euler-MacLaurin summation}}
+
+
+\hangindent=5cm \large{{\bf Problem 6.14 \hspace{0.5cm} Continue the pattern}
+
+
+\hangindent=3cm \vspace{0.1cm}
+What is $e^Dx^3$ and, in general, $e^Dx^n$?
+\\
+
+\noindent $\blacktriangleright$ \textit{What does $e^D$ do in general?}}
+\\
+
+\noindent \Large {The preceding examples follow the pattern $e^Dx^n = (x+1)^n$. Because most
+functions of x can be expanded in powers of x, and $e^D$ turns each $x^n$ term
+into $(x+1)^n$, the conclusion is that $e^D$ turns $f(x)$ into $f(x+1)$. Amazingly,
+$e^D$ is simply L, the left-shift operator.}
+\\
+
+\hangindent=3cm \large{{\bf Problem 6.15 \hspace{0.5cm} Right or left shift}}
+\vspace{0.1cm}
+
+ \large{Draw a graph to show that $f(x) → f(x + 1)$ is a left rather than a right shift.} 
+\hangindent=0.5cm \vspace{0.1cm} Apply $e^{−D}$ to a few simple functions to characterize its behavior.
+\\
+
+\hangindent=5cm \large{{\bf Problem 6.16 \hspace{0.5cm} Operating on a harder function}}
+\vspace{0.1cm}
+
+Apply the Taylor expansion for $e^D$ to $sin{x}$ to show that $e^Dsin x = sin(x + 1)$.
+\\
+
+\large{{\bf Problem 6.17 \hspace{0.5cm} General shift operator}}
+
+
+\hangindent=0.5cm If x has dimensions, then the derivative operator $D = d/dx$ is not dimensionless,
+and $e^D$ is an illegal expression. To make the general expression eaD legal, what
+must the dimensions of $a$ 
+be? What does $e^{aD}$ do?
+\\
+\\
+
+
+
+\noindent \Large{{\bf 6.3.2 Summation}} \vspace{0.5cm}
+
+
+\noindent 
+{Just as the derivative operator can represent the left-shift operator (as $L =
+e^D$), the left-shift operator can represent the operation of summation. This
+operator representation will lead to a powerful method for approximating
+sums with no closed form.
+Summation is analogous to the more familiar operation of integration.
+Integration occurs in definite and indefinite flavors: Definite integration
+is equivalent to indefinite integration followed by evaluation at the limits
+of integration. As an example, here is the definite integration of $f(x) = 2x$.}
+\\
+
+
+\hangindent=1.5cm {$2x$ $\longrightarrow$ $\underset{\textrm{integration}}{\fbox{\huge{$\int$}}}\xrightarrow{x^2+C}$ $\underset{\textrm{limits}}{\fbox{$\Big|_a^b$}}$} $\longrightarrow$ $b^2-a^2$ \vspace{0.5cm}
+
+
+\noindent In general, the connection between an input function g and the result of
+indefinite integration is $DG = g$, where $D$ is the derivative operator and
+$G=\int g$ is the result of indefinite integration. Thus D and $\int$ are inverses\\
+
+
+
+\newpage
+
+
+\pagestyle{fancy}
+
+
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+
+\fancyhead[LO]{\large \textsl {\textbf{110}}}
+\fancyhead[RO]{\large \textsl {6 Analogy}}
+\noindent \Large {of one another---$D\int=1$ or $D=1/\int$---a connection represented by the loop in the diagram ($D\not=1$ because of a possible integration constant.)}
+\\
+\\
+\\
+
+\noindent $\blacktriangleright$ \textit{What is the analogous picture for summation?}
+\\
+\\
+\noindent
+\begin{minipage}[h]{70mm}\parindent=2em
+Analogously to integration, define definite summation as indefinite summation and then evaluation at the limits. But apply the analogy with care to avoid an off-by-one or
+fencepost error (Problem 2.24). The sum  
+\end{minipage} \\ 
+$\sum\nolimits_2^4 f(k)$ includes three rectangles—$f(2), f(3),$ and $f(4)$—whereas the definite integral $\int_{2}^{4}f(k)dk$ does not include any of the $f(4)$ rectangle. Rather than rectifying the discrepancy by redefining the familiar operation of integration, interpret indefinite summation to exclude the last rectangle.
+Then indefinite summation followed by evaluating at the limits a and b produces a sum whose index ranges from $a$ to $b − 1$.
+\\
+\\
+As an example, take $f(k) = k$. Then the indefinite sum $\Sigma f$ is the function $F$ defined by $F(k) = k(k−1)/2+C$ (where C is the constant of summation). Evaluating $F$ between 0 and $n$ gives $n(n − 1)/2$, which is $\Sigma_0^{n-1}k$. In the following diagram, these steps are the forward path.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+In the reverse path, the new $\Delta$ operator inverts $\Sigma$ just as differentiation
+inverts integration. Therefore, an operator representation for $\Delta$ provides
+one for $\Sigma$. Because $\Delta$ and the derivative operator $D$ are analogous, their
+representations are probably analogous. A derivative is the limit\\
+
+\[
+\frac{df}{dx}=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}. \eqno{(6.8)}
+\]
+
+\newpage
+\pagestyle{fancy}
+
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+
+\fancyhead[RO]{\large \textsl {\textbf{111}}}
+\fancyhead[LO]{\large \textsl {6.3 Operators: Euler-MacLaurin summation}}
+
+\noindent The deretive operator $D$ is therefore the operator limit
+
+\[
+D=\lim_{h\rightarrow 0}\frac{L_h-1}{h}, \eqno{(6.9)}
+\]
+\\
+where the $L_h$ operator turns $f(x)$ into $f(x+h)$---that is, $L_h$ left  shifts by h.\\
+
+\hangindent=3cm \large{{\bf Problem 6.18 \hspace{0.5cm} Operator limit}}
+\vspace{0.1cm}
+
+\large{Explain why $L_h\approx1+hD$ for small h. Show therefore that $L=e^D$}. \\
+
+\noindent $\blacktriangleright$ \textit{What is an analogous representation of $\Delta$?} \\
+
+\Large \noindent The operator limit for $D$ uses an infinitesimal left shift; correspondingly,
+the inverse operation of integration sums rectangles of infinitesimal width.
+Because summation $\Sigma$ sums rectangles of unit width, its inverse $\Delta$ should
+use a unit left shift—namely, $L_h$ with $h = 1$. As a reasonable conjecture,
+\[
+\Delta=\lim_{h\rightarrow 1}\frac{L_h-1}{h}=L-1. \eqno{(6.10)}
+\] 
+
+\noindent This $\Delta$---called the finite-difference operator—is constructed to be $1/\Sigma$. If the construction is correct, then $(L-1)\Sigma$ is the identity operator 1. In other words, $(L-1)\Sigma$ should turn functions into themselves.\\
+
+\noindent \large $\blacktriangleright$ \textit{How well does this conjecture work in various easy cases?} \\
+
+\Large \noindent To test the conjecture, apply the operator $(L-1)\Sigma$ first to the easy function $g = 1$. Then $\Sigma g$ g is a function waiting to be fed an argument, and $(\Sigma g)(k)$ is the result of feeding it $k$. With that notation, $(\Sigma g)(k)=k+C$. Feeding
+this function to the $L−1$ operator reproduces $g$.
+
+\[
+[(L-1)\Sigma g](k)=\underbrace{(k+1+C)}_{(L\Sigma g)(k)}-\underbrace{(k+C)}_{(1\Sigma g)(k)}=\underbrace{1}_{g(k)}. \eqno{(6.11)}
+\] \vspace{0.001cm}
+
+With the next-easiest function—defined by $g(k)=k$---the indefinite sum $(\Sigma g)(k)$ is $k(k-1)/2+C$. Passing $\Sigma g$ through $L-1$ again reproduces $g$.
+\[
+[(L-1)\Sigma g](k)=\underbrace{(\frac{(k+1)k}{2}+C)}_{(L\Sigma g)(k)}-\underbrace{(\frac{k(k-1)}{2}+C)}_{(1\Sigma g)(k)}=\underbrace{k}_{g(k)}. \eqno{(6.12)}
+\] 
+
+In summary, for the test functions $g(k) = 1$ and $g(k) = k$, the operator
+product $(L − 1)\Sigma$ takes $g$ back to itself, so it acts like the identity operator.
+
+\newpage
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+
+\fancyhead[LO]{\large \textsl {\textbf{112}}}
+\fancyhead[RO]{\large \textsl {6 Analogy}}
+
+\noindent \Large This behavior is general---$(L-1)\Sigma 1$ is indeed 1, and $\Sigma=1/(L-1)$. Because $L=e^D$, we have $\Sigma=1/(e^D-1)$. Expanding the right side in a Taylor
+series gives an amazing representation of the summation operator.
+\[
+\sum=\frac{1}{e^D-1}=\frac{1}{D}-\frac{1}{2}+\frac{D}{12}-\frac{D^3}{720}+\frac{D^5}{30240}-\dots. \eqno{(6.13)}
+\]
+Because $D\int=1$, the leading term $1/D$ is integration. Thus, summation is approximately integration—a plausible conclusion indicating that the operator representation is not nonsense.\\
+
+\noindent Applying this operator series to a function f and then evaluating at the limits $a$ and $b$ produces the Euler–MacLaurin summation formula
+
+\[
+\sum_a^{b-1}f(k)=\int_a^b f(k)dk-\frac{f(b)-f(a)}{2}+\frac{f^{(1)}(b)-f^{(1)}(a)}{12}\]
+\[-\frac{f^{(3)}(b)-f^{(3)}(a)}{720}+\frac{f^{(5)}(b)-f^{(5)}(a)}{30240}-\dots. \eqno{(6.14)}
+\] 
+\\
+where $f^{(n)}$ indicates the nth derivative of $f$.
+\vspace{0.3cm}
+
+\noindent The sum lacks the usual final term $f(b)$. Including this term gives the useful alternative 
+
+\[
+\sum_a^{b}f(k)=\int_a^b f(k)dk+\frac{f(b)-f(a)}{2}+\frac{f^{(1)}(b)-f^{(1)}(a)}{12}\]
+\[-\frac{f^{(3)}(b)-f^{(3)}(a)}{720}+\frac{f^{(5)}(b)-f^{(5)}(a)}{30240}-\dots. \eqno{(6.15)}
+\]
+
+
+\noindent As a check, try an easy case: $\sum_0^n k$. Using Euler–MacLaurin summation, $f(k)=k$, $a=0$, and $b=n$. The integral term then contributes $n^2/2$; the constant term $[f(b)+f(a)]/2$ contributes $n/2$; and later terms vanish. The result is familiar and correct:
+
+\[
+\sum_0^n k=\frac{n^2}{2}+\frac{n}{2}+0=\frac{n(n+1)}{2}.\eqno{(6.16)}
+\]
+
+\noindent A more stringent test of Euler–MacLaurin summation is to approximate $\ln{n!}$, which is the sum $\sum_1^n\ln k$(Section 4.5). Therefore, sum $f(k)=\ln k$ between the (inclusive) limits $a=1$ and $b=n$. The result is
+
+\[
+\sum_1^n\ln k=\int_1^n\ln k dk+\frac{\ln n}{2}+\dots.\eqno{(6.17)}
+\]
+
+
+
+
+\end{document}
