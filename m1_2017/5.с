@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+float F, C;
+float l, u, s;
+printf("Please, enter lower, upper and step:");
+scanf("%f, %f, %f", &l, &u, &s);
+F = l;
+while (F <= u)
+    {C = 5 * (F-32) / 9; printf ("%.2f\t %.2f\n", F, C);
+    F = F + s;
+    }
+    return 0;
+}
