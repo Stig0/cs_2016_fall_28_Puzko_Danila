@@ -1,16 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-    int day;
-    int month;
-    int t;
-    day=11;
-    month=07;
-    printf("month=%d, month=%d\n", month, day);
-
-
-    printf("month=%d, day=%d", day, month);
-    return 0;
+	int day = 11, month = 07;
+	int a = day;
+	printf("day=%i, month=%i\n", day, month);
+	day = month;
+	month = a;
+	printf("day=%i, month=%i\n", day, month);
+	return 0;
 }
