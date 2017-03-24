@@ -4,38 +4,39 @@
 
 int main()
 {
-    int result=0, i=0;
-    int a=0;
+    float result=0;
+    int i=0;
+    float a=0;
     char z;
-    int b=0;
+    float b=0;
 
-    scanf("%d%c%d", &a, &z, &b);
+    scanf("%f%c%f", &a, &z, &b);
 
     switch(z)
     {
     case '+':
         result=a+b;
-        printf("res=%d", result);
+        printf("res=%.2f", result);
         break;
 
     case '-':
         result=a-b;
-        printf("res=%d", result);
+        printf("res=%.2f", result);
         break;
 
     case '*':
         result=a*b;
-        printf("res=%d", result);
+        printf("res=%.2f", result);
         break;
 
     case '/':
-        result=a/b;
-        printf("res=%d", result);
+        result=a / b;
+        printf("res=%.2f", result);
         break;
 
     case '^':
         result=pow(a,b);
-        printf("res=%d", result);
+        printf("res=%.2f", result);
         break;
 
     default:
@@ -47,3 +48,4 @@ int main()
     }
     return 0;
 }
+
