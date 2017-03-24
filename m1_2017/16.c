@@ -4,8 +4,8 @@
 
 int main (void)
 {
-    int n=0,i=0;
-    char k;
+    int n=0;
+    
 
    char a[1000];
    char c[1000];
