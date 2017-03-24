@@ -32,7 +32,9 @@ int main()
             i=0;
             reverse(l, m);
             printf("%s\n", l);
+            break;
         }
     }
     return 0;
+
 }
