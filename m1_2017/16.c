@@ -33,6 +33,6 @@ int main (void)
 
    strncat(c,a,n);
    printf("Stroka c s skopirovannymi %i simvolami iz tekuschey stroki a:\n%s", n, c);
-   getch();
+   
    return 0;
 }
