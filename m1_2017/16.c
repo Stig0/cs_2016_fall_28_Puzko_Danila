@@ -8,7 +8,7 @@ int main (void)
     char k;
 
    char a[1000];
-   char c[1000], t[1000], p[1000];
+   char c[1000];
    printf("Vvedi stroku a:");
    gets(a);
 
