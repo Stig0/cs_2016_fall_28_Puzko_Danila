@@ -39,6 +39,11 @@ int main()
         printf("res=%.2f", result);
         break;
 
+    case '%':
+        result=(int)a%(int)b;
+        printf("res=%.2f", result);
+        break;
+
     default:
         printf("Error");
 
