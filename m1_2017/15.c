@@ -5,7 +5,7 @@ int main()
 {
     int i=0, k=0;
     char c[1000],b[1000];
-    printf("Vvedite stroku:")
+    printf("Vvedite stroku:");
     gets(c);
     b[0]=c[0];
     for(i=0;c[i]!='\0';i++)
