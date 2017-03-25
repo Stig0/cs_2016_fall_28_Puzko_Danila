@@ -6,7 +6,7 @@ int main()
     int i=0;
     char c[1000];
     int max=c[0];
-    printf("vvedite stroku:");
+    printf("vvedite stroku:\n");
     gets(c);
     for(i=0;c[i]!='\0';++i){
 
@@ -20,6 +20,6 @@ int main()
         }
     }
 
-    printf("%c", max);
+    printf("%c\n", max);
 
 }
