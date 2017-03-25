@@ -1,26 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-
+#include <string.h>
 
 int main()
 {
-    int i=0,t=0;
-    char c[1000];
-    char b[1000];
+    int i=0, k=0;
+    char c[1000],b[1000];
+    printf("Vvedite stroku:")
     gets(c);
-    for(i=0;c[i]!='\0';++i){
-        if(c[i]==c[i+1]){
-            i=i+1;
-
+    b[0]=c[0];
+    for(i=0;c[i]!='\0';i++)
+        { if(b[k-1]!=c[i])
+            {
+                b[k]=c[i];
+                printf("%c",b[k]);
+                k++;
+             }
         }
-        else{
-            t=i;
-
-            printf("%c", c[t]);
-            t=t+1;
-
-        }
-
-    }
     return 0;
 }
