@@ -7,7 +7,7 @@ int main()
     char c[1000];
     int max=c[0];
     printf("vvedite stroku:\n");
-    gets(c);
+    scanf("%s", c);
     for(i=0;c[i]!='\0';++i){
 
         if(c[i+1]>max){
