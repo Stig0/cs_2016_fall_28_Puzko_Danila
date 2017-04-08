@@ -1,0 +1,2 @@
+gcc -c main.c dict.c
+gcc dict.o main.o
