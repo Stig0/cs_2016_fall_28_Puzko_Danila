@@ -1,7 +1,7 @@
 #Dictionary
 
 main: main.o dict.o
-	gcc -o dict main.o hello.o
+	gcc -o dict main.o dict.o
 
 main.o: main.c
 	gcc -c main.c
