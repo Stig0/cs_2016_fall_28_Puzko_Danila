@@ -8,6 +8,6 @@ main.o: main.c
 
 hello.o: dict.c
 	gcc -c dict.c
-  
+
 clean:
 	rm -f *.o dict
