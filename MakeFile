@@ -1,2 +1,13 @@
-gcc -c main.c dict.c
-gcc dict.o main.o
+#Dictionary
+
+main: main.o dict.o
+	gcc -o dict main.o hello.o
+
+main.o: main.c
+	gcc -c main.c
+
+hello.o: dict.c
+	gcc -c dict.c
+  
+clean:
+	rm -f *.o dict
