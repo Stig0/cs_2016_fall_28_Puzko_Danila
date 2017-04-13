@@ -6,7 +6,7 @@ main: main.o dict.o
 main.o: main.c
 	gcc -c main.c
 
-hello.o: dict.c
+dict.o: dict.c
 	gcc -c dict.c
 
 clean:
