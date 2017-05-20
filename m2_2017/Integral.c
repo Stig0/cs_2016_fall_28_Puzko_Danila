@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 float func(float x)
 {
@@ -14,7 +15,7 @@ int main()
 	scanf("%f", &a);
 	printf("Enter high:");
 	scanf("%f", &b);
-	printf("Enter n:");
+	printf("Enter accuracy (min=1, max=100000):");
 	scanf("%f", &n);
     i=(b-a)/(2*n);
     h=(b-a)/(2*n);
@@ -27,7 +28,7 @@ int main()
         res=res+p1+p2;
 	}
 	res1=p+res;
-	printf("%f\n", res1);
+	printf("Result=%f\n", res1);
 
     return 0;
 }
